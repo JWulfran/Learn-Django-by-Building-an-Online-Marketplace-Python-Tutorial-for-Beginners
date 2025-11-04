@@ -6,8 +6,8 @@ from item.models import Item
 # Create your views here.
 
 @login_required
-def dashboard(request):
-    items = Item.objects.filter(creeated_by = request.user)
+def index(request):
+    items = Item.objects.filter(created_by = request.user)
 
     return render(request, 'dashboard/index.html', {
         'items': items
